@@ -1,6 +1,7 @@
 from django.contrib import admin
 from .models import *
 
+
 class MovimentoRotativoAdmin(admin.ModelAdmin):
     list_display=('checkin', 'checkout', 'veiculo', 'valor_hora', 'horas_total', 'total', 'pago')
 
