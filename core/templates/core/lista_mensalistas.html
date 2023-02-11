@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mensalistas</title>
+</head>
+<body>
+    <h2>Mensalistas</h2>
+    <lu>
+        {% for mensalista in mensalistas %}
+        <li>
+            {{mensalista.veiculo.placa}} - {{mensalista.veiculo.proprietario.nome}}
+        </li>
+        {% endfor%}
+    </lu>
+
+    <form action="{% url 'core_mensalista_novo' %}" method="POST">
+        {% csrf_token %}
+
+        {{form.as_p}}
+        <button type="submit">Cadastrar</button>
+    </form>
+
+</body>
+</html>

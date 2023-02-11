@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Movimentos Rotativos</title>
+</head>
+<body>
+    <h2>Movimentos Rotativos</h2>
+    <lu>
+        {% for movimentorotativo in movimentosrotativos %}
+        <li>
+            {{movimentorotativo.veiculo.placa}} ({{movimentorotativo.checkin}})
+        </li>
+        {% endfor%}
+    </lu>
+
+
+    <form action="{% url 'core_movimentorotativo_novo' %}" method="POST">
+        {% csrf_token %}
+
+        {{form.as_p}}
+        <button type="submit">Cadastrar</button>
+    </form>
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Movimentos mensais</title>
+</head>
+<body>
+    <h2>Movimentos mensais</h2>
+    <lu>
+        {% for movimentomensal in movimentosmensais %}
+        <li>
+            {{movimentomensal.mensalista}} ({{movimentomensal.dt_pgto}})
+        </li>
+        {% endfor%}
+    </lu>
+
+    <form action="{% url 'core_movimentomensal_novo' %}" method="POST">
+        {% csrf_token %}
+
+        {{form.as_p}}
+        <button type="submit">Cadastrar</button>
+    </form>
+
+</body>
+</html>
