@@ -1,12 +1,13 @@
-
+import os
 from pathlib import Path
+from decouple import config
+from dj_database_url import parse as dburl
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+SECRET_KEY = config('SECRET_KEY')
 
-SECRET_KEY = 'django-insecure-$9(y5!7((yyi3gc34)t0b+l!q5t9v&o_yc=^af(cg+=n(dc^ul'
-
-DEBUG = True
+DEBUG = config('DEBUG', default=False, cast=bool)
 
 ALLOWED_HOSTS = []
 
@@ -50,12 +51,8 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'estacionamento.wsgi.application'
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
+default_dburl = 'sqlite:///' + os.path.join(BASE_DIR, 'db.sqlite3')
+DATABASES = { 'default': config('DATABASE_URL', default=default_dburl, cast=dburl), }
 
 AUTH_PASSWORD_VALIDATORS = [
     {
