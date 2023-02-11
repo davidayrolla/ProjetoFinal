@@ -58,3 +58,24 @@ class MovimentoRotativo(models.Model):
 
     class Meta:
         verbose_name_plural = 'movimentos rotativos'
+
+class Mensalista(models.Model):
+    veiculo = models.ForeignKey(Veiculo, on_delete=models.CASCADE)
+    inicio = models.DateField()
+    fim = models.DateField(auto_now=False, null=True, blank=True)
+    valor_mes = models.DecimalField(max_digits=6, decimal_places=2)
+
+    def __str__(self):
+        return f'{self.veiculo.placa} - {self.veiculo.proprietario.nome}'
+
+
+class MovimentoMensal(models.Model):
+    mensalista = models.ForeignKey(Mensalista, on_delete=models.CASCADE)
+    dt_pgto = models.DateField()
+    total = models.DecimalField(max_digits=6, decimal_places=2)
+
+    def __str__(self):
+        return f'{self.mensalista} - {self.dt_pgto}'
+
+    class Meta:
+        verbose_name_plural = 'movimentos mensais'
