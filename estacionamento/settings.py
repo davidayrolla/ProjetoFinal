@@ -9,7 +9,7 @@ SECRET_KEY = config('SECRET_KEY')
 
 DEBUG = config('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = ['127.0.0.1', 'https://estacionayrolla.herokuapp.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'estacionayrolla.herokuapp.com']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
