@@ -1,15 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Movimentos Rotativos</title>
-</head>
-<body>
     <h2>Movimentos Rotativos</h2>
     <lu>
         {% for movimentorotativo in movimentosrotativos %}
         <li>
-            {{movimentorotativo.veiculo.placa}} ({{movimentorotativo.checkin}})
+             <a href="{% url 'core_movimentorotativo_update' movimentorotativo.id %}">{{movimentorotativo.veiculo.placa}} ({{movimentorotativo.checkin}})</a>
         </li>
         {% endfor%}
     </lu>
@@ -21,6 +14,3 @@
         {{form.as_p}}
         <button type="submit">Cadastrar</button>
     </form>
-
-</body>
-</html>

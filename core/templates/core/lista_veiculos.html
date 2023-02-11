@@ -1,15 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Veículos</title>
-</head>
-<body>
     <h2>Veículos</h2>
     <lu>
         {% for veiculo in veiculos %}
         <li>
-            {{veiculo.placa}} ({{veiculo.proprietario.nome}})
+             <a href="{% url 'core_veiculo_update' veiculo.id %}">{{veiculo.placa}} ({{veiculo.proprietario.nome}})</a>
         </li>
         {% endfor%}
     </lu>
@@ -20,5 +13,3 @@
         {{form.as_p}}
         <button type="submit">Cadastrar</button>
     </form>
-</body>
-</html>

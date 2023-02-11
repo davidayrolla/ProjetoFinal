@@ -1,15 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Mensalistas</title>
-</head>
-<body>
+
     <h2>Mensalistas</h2>
     <lu>
         {% for mensalista in mensalistas %}
         <li>
-            {{mensalista.veiculo.placa}} - {{mensalista.veiculo.proprietario.nome}}
+            <a href="{% url 'core_mensalista_update' mensalista.id %}">{{mensalista.veiculo.placa}} - {{mensalista.veiculo.proprietario.nome}}</a>
         </li>
         {% endfor%}
     </lu>
@@ -20,6 +14,3 @@
         {{form.as_p}}
         <button type="submit">Cadastrar</button>
     </form>
-
-</body>
-</html>

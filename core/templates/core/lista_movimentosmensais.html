@@ -1,15 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Movimentos mensais</title>
-</head>
-<body>
     <h2>Movimentos mensais</h2>
     <lu>
         {% for movimentomensal in movimentosmensais %}
         <li>
-            {{movimentomensal.mensalista}} ({{movimentomensal.dt_pgto}})
+            <a href="{% url 'core_movimentomensal_update' movimentomensal.id %}">{{movimentomensal.mensalista}} ({{movimentomensal.dt_pgto}})</a>
         </li>
         {% endfor%}
     </lu>
@@ -20,6 +13,3 @@
         {{form.as_p}}
         <button type="submit">Cadastrar</button>
     </form>
-
-</body>
-</html>

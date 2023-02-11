@@ -1,15 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Pessoas</title>
-</head>
-<body>
     <h2>Pessoas</h2>
     <lu>
         {% for pessoa in pessoas %}
         <li>
-            {{pessoa.nome}}
+            <a href="{% url 'core_pessoa_update' pessoa.id %}">{{pessoa.nome}}</a>
         </li>
         {% endfor%}
     </lu>
@@ -20,5 +13,3 @@
         {{form.as_p}}
         <button type="submit">Cadastrar</button>
     </form>
-</body>
-</html>
