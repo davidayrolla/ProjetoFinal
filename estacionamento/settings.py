@@ -1,7 +1,8 @@
 import os
 from pathlib import Path
 from decouple import config
-from dj_database_url import parse as dburl, dj_database_url
+from dj_database_url import parse as dburl
+#, dj_database_url
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -52,20 +53,19 @@ TEMPLATES = [
 WSGI_APPLICATION = 'estacionamento.wsgi.application'
 
 default_dburl = 'sqlite:///' + os.path.join(BASE_DIR, 'db.sqlite3')
-# DATABASES = { 'default': config('DATABASE_URL', default=default_dburl, cast=dburl), }
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'djangogirls',
-        'USER': 'admin',
-        'PASSWORD': '12345',
-        'HOST': 'localhost',
-        'PORT': '',
-    }
-}
-
-db_from_env = dj_database_url.config(conn_max_age=500)
-DATABASES['default'].update(db_from_env)
+DATABASES = { 'default': config('DATABASE_URL', default=default_dburl, cast=dburl), }
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'djangogirls',
+#         'USER': 'admin',
+#         'PASSWORD': '12345',
+#         'HOST': 'localhost',
+#         'PORT': '',
+#     }
+# }
+# db_from_env = dj_database_url.config(conn_max_age=500)
+# DATABASES['default'].update(db_from_env)
 
 AUTH_PASSWORD_VALIDATORS = [
     {
