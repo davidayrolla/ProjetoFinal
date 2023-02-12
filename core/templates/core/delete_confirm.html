@@ -1,6 +1,12 @@
+{% extends 'base.html' %}
+
+{% block main %}
+
 <h2> Confirma exclusão de {{obj}}?</h2>
 
 <form method="POST">
   {% csrf_token %}
   <button type="submit">Confirmo exclusão</button>
 </form>
+
+{% endblock %}

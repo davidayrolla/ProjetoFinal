@@ -1,3 +1,7 @@
+{% extends 'base.html' %}
+
+{% block main %}
+
 <h2>Alterando Movimento Mensal: {{movimentomensal}}</h2>
 
 <form action="{% url 'core_movimentomensal_update' movimentomensal.id %}" method="POST">
@@ -9,3 +13,5 @@
 </form>
 
 <a href="{% url 'core_movimentomensal_delete' movimentomensal.id %}">Excluir</a>
+
+{% endblock %}

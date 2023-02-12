@@ -1,3 +1,7 @@
+{% extends 'base.html' %}
+
+{% block main %}
+
 <h2>Alterando Veículo: {{veiculo}}</h2>
 
 <form action="{% url 'core_veiculo_update' veiculo.id %}" method="POST">
@@ -9,3 +13,5 @@
 </form>
 
 <a href="{% url 'core_veiculo_delete' veiculo.id %}">Excluir</a>
+
+{% endblock %}
