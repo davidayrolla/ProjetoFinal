@@ -23,17 +23,31 @@
 
         </div>
 
-        <div class="col-sm-6">
+       <div class="col-sm-6">
 
-            <lu>
-                {% for pessoa in pessoas %}
-                <li>
-                    <a href="{% url 'core_pessoa_update' pessoa.id %}">{{pessoa.nome}}</a>
-                </li>
+            <table class="table">
+              <thead class="table-light">
+                <tr>
+                  <th scope="col">Id</th>
+                  <th scope="col">Nome</th>
+                  <th scope="col">Endereço</th>
+                  <th scope="col">Telefone</th>
+                </tr>
+              </thead>
+              <tbody>
+              {% for pessoa in pessoas %}
+                <tr>
+                  <th scope="row">{{pessoa.id}}</th>
+                  <td><a href="{% url 'core_pessoa_update' pessoa.id %}">{{pessoa.nome}}</a></td>
+                  <td>{{pessoa.endereco}}</td>
+                  <td>{{pessoa.telefone}}</td>
+                </tr>
                 {% endfor%}
-            </lu>
+              </tbody>
+            </table>
 
         </div>
+
     </div>
 
 

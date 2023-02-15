@@ -24,13 +24,34 @@
 
         <div class="col-sm-6">
 
-            <lu>
+<!--            <lu>-->
+<!--                {% for movimentomensal in movimentosmensais %}-->
+<!--                <li>-->
+<!--                    <a href="{% url 'core_movimentomensal_update' movimentomensal.id %}">{{movimentomensal.mensalista}} ({{movimentomensal.dt_pgto}})</a>-->
+<!--                </li>-->
+<!--                {% endfor%}-->
+<!--            </lu>-->
+
+            <table class="table">
+              <thead class="table-light">
+                <tr>
+                  <th scope="col">Id</th>
+                  <th scope="col">Mensalista</th>
+                  <th scope="col">Data de pagamento</th>
+                  <th scope="col">Total</th>
+                </tr>
+              </thead>
+              <tbody>
                 {% for movimentomensal in movimentosmensais %}
-                <li>
-                    <a href="{% url 'core_movimentomensal_update' movimentomensal.id %}">{{movimentomensal.mensalista}} ({{movimentomensal.dt_pgto}})</a>
-                </li>
-                {% endfor%}
-            </lu>
+                <tr>
+                  <th scope="row">{{movimentomensal.id}}</th>
+                  <td><a href="{% url 'core_movimentomensal_update' movimentomensal.id %}">{{movimentomensal.mensalista}}</a></td>
+                  <td>{{movimentomensal.dt_pgto}}</td>
+                  <td>{{movimentomensal.total}}</td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
 
         </div>
 

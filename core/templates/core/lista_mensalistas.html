@@ -24,13 +24,28 @@
 
         <div class="col-sm-6">
 
-            <lu>
-                {% for mensalista in mensalistas %}
-                <li>
-                    <a href="{% url 'core_mensalista_update' mensalista.id %}">{{mensalista.veiculo.placa}} - {{mensalista.veiculo.proprietario.nome}}</a>
-                </li>
+            <table class="table">
+              <thead class="table-light">
+                <tr>
+                  <th scope="col">Id</th>
+                  <th scope="col">Placa</th>
+                  <th scope="col">Marca</th>
+                  <th scope="col">Cor</th>
+                  <th scope="col">Proprietário</th>
+                </tr>
+              </thead>
+              <tbody>
+              {% for mensalista in mensalistas %}
+                <tr>
+                  <th scope="row">{{mensalista.id}}</th>
+                  <td><a href="{% url 'core_mensalista_update' mensalista.id %}">{{mensalista.veiculo.placa}}</a></td>
+                  <td>{{mensalista.veiculo.marca}}</td>
+                  <td>{{mensalista.veiculo.cor}}</td>
+                  <td>{{mensalista.veiculo.proprietario}}</td>
+                </tr>
                 {% endfor%}
-            </lu>
+              </tbody>
+            </table>
 
         </div>
 

@@ -4,8 +4,7 @@ from .forms import PessoaForm, VeiculoForm, MovimentoRotativoForm, MovimentoMens
 
 
 def home(request):
-    context={'mensagem': 'Olá,mundo'}
-    return render(request, 'core/index.html', context )
+    return render(request, 'core/index.html' )
 
 def lista_pessoas(request):
     pessoas = Pessoa.objects.all()

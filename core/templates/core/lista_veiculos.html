@@ -24,13 +24,30 @@
         </div>
 
         <div class="col-sm-6">
-            <lu>
+
+            <table class="table">
+              <thead class="table-light">
+                <tr>
+                  <th scope="col">Id</th>
+                  <th scope="col">Placa</th>
+                  <th scope="col">Marca</th>
+                  <th scope="col">Cor</th>
+                  <th scope="col">Proprietário</th>
+                </tr>
+              </thead>
+              <tbody>
                 {% for veiculo in veiculos %}
-                <li>
-                     <a href="{% url 'core_veiculo_update' veiculo.id %}">{{veiculo.placa}} ({{veiculo.proprietario.nome}})</a>
-                </li>
-                {% endfor%}
-            </lu>
+                <tr>
+                  <th scope="row">{{veiculo.id}}</th>
+                  <td><a href="{% url 'core_veiculo_update' veiculo.id %}">{{veiculo.placa}}</a></td>
+                  <td>{{veiculo.marca}}</td>
+                  <td>{{veiculo.cor}}</td>
+                  <td>{{veiculo.proprietario}}</td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+
         </div>
 
     </div>

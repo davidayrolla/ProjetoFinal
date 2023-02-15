@@ -24,13 +24,30 @@
 
         <div class="col-sm-6">
 
-            <lu>
+            <table class="table">
+              <thead class="table-light">
+                <tr>
+                  <th scope="col">Id</th>
+                  <th scope="col">Veiculo</th>
+                  <th scope="col">Checkin</th>
+                  <th scope="col">Checkout</th>
+                  <th scope="col">Valor</th>
+                  <th scope="col">Pago</th>
+                </tr>
+              </thead>
+              <tbody>
                 {% for movimentorotativo in movimentosrotativos %}
-                <li>
-                     <a href="{% url 'core_movimentorotativo_update' movimentorotativo.id %}">{{movimentorotativo.veiculo.placa}} ({{movimentorotativo.checkin}})</a>
-                </li>
-                {% endfor%}
-            </lu>
+                <tr>
+                  <th scope="row">{{movimentorotativo.id}}</th>
+                  <td><a href="{% url 'core_movimentorotativo_update' movimentorotativo.id %}">{{movimentorotativo.veiculo.placa}}</a></td>
+                  <td>{{movimentorotativo.checkin}}</td>
+                  <td>{{movimentorotativo.checkout}}</td>
+                  <td>{{movimentorotativo.valor_hora}}</td>
+                  <td>{{movimentorotativo.pago}}</td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
 
         </div>
 
