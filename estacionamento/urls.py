@@ -21,4 +21,5 @@ urlpatterns = [
     re_path(r'^admin/', admin.site.urls),
     re_path(r'^sistema/', include('core.urls') ),
     re_path(r'^$', admin.site.urls),
+    re_path('^accounts/', include('django.contrib.auth.urls')),
 ]

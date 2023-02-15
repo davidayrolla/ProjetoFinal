@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+    {% block contents %}
+
+    <ul class="nav nav-tabs">
+      {% if user.is_authenticated %}
+      <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="{% url 'core_home' %}">Home</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Cadastros</a>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="{% url 'core_lista_pessoas' %}">Pessoas</a></li>
+          <li><a class="dropdown-item" href="{% url 'core_lista_veiculos' %}">Veículos</a></li>
+          <li><a class="dropdown-item" href="{% url 'core_lista_mensalistas' %}">Mensalistas</a></li>
+        </ul>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Movimentos</a>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="{% url 'core_lista_movimentosrotativos' %}">Rotativos</a></li>
+          <li><a class="dropdown-item" href="{% url 'core_lista_movimentosmensais' %}">Mensais</a></li>
+        </ul>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="logout">Logout</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#">Olá, {{user}}!</a>
+      </li>
+      {% else %}
+      <li class="nav-item">
+        <a class="nav-link" href="login">Login</a>
+      </li>
+      {%endif%}
+    </ul>
+
+    {% block main %}
+
+    {% endblock %}
+
+{% endblock %}
+

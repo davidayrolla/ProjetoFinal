@@ -28,4 +28,5 @@ urlpatterns = [
     re_path(r'^mensalistanovo/$', mensalista_novo, name='core_mensalista_novo'),
     re_path(r'^mensalistaupdate/(?P<id>\d+)/$', mensalista_update, name='core_mensalista_update'),
     re_path(r'^mensalistadelete/(?P<id>\d+)/$', mensalista_delete, name='core_mensalista_delete'),
+
 ]
