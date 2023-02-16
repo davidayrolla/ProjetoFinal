@@ -1,0 +1,60 @@
+{% extends 'website/base.html' %}
+{% load static %}
+
+{% block main %}
+
+<div class="row row-space">
+    <div class="col-6">
+
+        <form>
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                <label for="inputEmail4">Email</label>
+                <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="inputNome">Nome</label>
+                    <input type="text" class="form-control" id="inputNome" placeholder="Seu nome aqui">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="inputSobreNome">Sobrenome</label>
+                    <input type="text" class="form-control" id="inputSobreNome" placeholder="Seu sobrenome aqui">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputAddress2">Endereco</label>
+                <input type="text" class="form-control" id="inputAddress2" placeholder="Seu endereço">
+            </div>
+            <div class="form-group">
+                <textarea name="" id="" cols="65" rows="10" class="form-control"></textarea>
+            </div>
+
+            <div class="form-group">
+                <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="gridCheck">
+                <label class="form-check-label" for="gridCheck">
+                   Receber noticias
+                </label>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
+
+    </div>
+    <div class="col-6">
+        <p>
+            Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis. Pra lá , depois
+            divoltis porris, paradis.Mauris nec dolor in eros commodo tempor. Aenean aliquam
+            molestie leo, vitae iaculis nisl.Praesent vel viverra nisi. Mauris aliquet nunc non turpis
+            scelerisque, eget.
+        </p>
+
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3678.4103179394356!2d-43.28850458556347!3d-22.787255139344342!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x997a7b5b2c578f%3A0xfae481f5fb33993e!2sCaxias%20Shopping!5e0!3m2!1spt-BR!2sbr!4v1676586584817!5m2!1spt-BR!2sbr"
+                width="500" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+    </div>
+</div>
+
+{% endblock %}
