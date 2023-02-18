@@ -29,4 +29,6 @@ urlpatterns = [
     re_path(r'^mensalistaupdate/(?P<id>\d+)/$', mensalista_update, name='core_mensalista_update'),
     re_path(r'^mensalistadelete/(?P<id>\d+)/$', mensalista_delete, name='core_mensalista_delete'),
 
+    re_path(r'^relatorio_pdf/$', Pdf.as_view(), name='relatorio_pdf'),
+    re_path(r'^relatorio_csv/$', ExportarParaCSV.as_view(), name='relatorio_csv'),
 ]

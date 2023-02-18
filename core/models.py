@@ -63,6 +63,7 @@ class MovimentoRotativo(models.Model):
     class Meta:
         verbose_name_plural = 'movimentos rotativos'
 
+
 class Mensalista(models.Model):
     veiculo = models.ForeignKey(Veiculo, on_delete=models.CASCADE)
     inicio = models.DateField()
